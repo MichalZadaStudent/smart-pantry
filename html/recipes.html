@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+    <title>אזור אישי - Smart Pantry</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/recipes.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">🍳 Smart Pantry</div>
+        <nav>
+            <a href="index.html">דף הבית (המקרר שלי)</a>
+            <a href="explore.html">הסתכלות על מתכונים</a>
+            <a href="recipes.html" class="active">מתכונים שמורים</a>
+            <button onclick="handleLogout()" class="logout-nav-btn">התנתק</button>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <div class="card">
+            <h2>המתכונים השמורים שלי</h2>
+            <div id="saved-recipes-list" class="recipes-grid" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        window.onload = function() { checkAuth(); loadSavedRecipes(); }
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/recipes.js"></script>
+</body>
+</html>

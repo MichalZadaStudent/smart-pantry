@@ -1,0 +1,61 @@
+.pantry-box {
+    background: #fdfdfd;
+    border: 1px solid #eef2f5;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+}
+
+.input-group input {
+    margin: 0;
+}
+
+.input-group button {
+    width: 140px;
+    background-color: #3aafa9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#pantry-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+#pantry-list li {
+    background: #f4fcfc;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 5px solid #3aafa9;
+    font-weight: 500;
+}
+
+.delete-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #fa5252;
+}

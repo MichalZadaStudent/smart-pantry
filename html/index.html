@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>אזור אישי - Smart Pantry</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+    <!-- תפריט ניווט עליון -->
+    <header class="navbar">
+        <div class="logo">🍳 Smart Pantry</div>
+        <nav>
+            <a href="index.html" class="active">דף הבית (המקרר שלי)</a>
+            <a href="explore.html">הסתכלות על מתכונים</a>
+            <a href="recipes.html">מתכונים שמורים</a>
+            <button onclick="handleLogout()" class="logout-nav-btn">התנתק</button>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <div class="card">
+            <h2>שלום, <span id="user-display"></span></h2>
+            <p>כאן את מנהלת את המצרכים שיש לך בבית.</p>
+
+            <div class="pantry-box" style="margin-top: 25px;">
+                <h4>המצרכים שלי בבית:</h4>
+                <div class="input-group">
+                    <input type="text" id="ingredient-input" placeholder="הוסיפי מצרך (למשל: עגבנייה, ביצים)...">
+                    <button onclick="addIngredient()">הוסף מצרך</button>
+                </div>
+                <ul id="pantry-list"></ul>
+            </div>
+
+            <!-- כפתור שפותח את דף חיפוש המתכונים לפי המצרכים -->
+            <button onclick="goToSearchPage()" class="primary-btn" style="margin-top: 20px;">מצא מתכונים לפי המצרכים שלי</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // בדיקת חיבור והצגת נתונים בעליית דף הבית
+        window.onload = function() {
+            checkAuth();
+            loadPantry();
+        }
+
+        function goToSearchPage() {
+            window.location.href = 'search.html';
+        }
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

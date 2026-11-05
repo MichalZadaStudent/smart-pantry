@@ -1,0 +1,19 @@
+#user-pantry-tags {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: #e28743;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin: 4px;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(226,135,67,0.2);
+}

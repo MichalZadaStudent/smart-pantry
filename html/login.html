@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>אזור אישי - Smart Pantry</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="center-body">
+
+    <div class="card auth-card">
+        <h2>כניסה לאפליקציית המתכונים</h2>
+        <p>הכניסי אימייל כדי להיכנס לאזור האישי שלך</p>
+        <input type="email" id="email-input" placeholder="הקלידי אימייל..." required>
+        <button onclick="handleLogin()">התחבר</button>
+    </div>
+
+    <script>
+        // אם המשתמש כבר מחובר, אין סיבה שיעבור דף התחברות, נשלח אותו ישר לדף הבית
+        if (sessionStorage.getItem('currentUser')) {
+            window.location.href = 'index.html';
+        }
+
+        function handleLogin() {
+            const emailInput = document.getElementById('email-input');
+            const email = emailInput.value.trim();
+
+            if (!email || !email.includes('@')) {
+                alert('נא להכניס כתובת אימייל תקינה');
+                return;
+            }
+
+            sessionStorage.setItem('currentUser', email);
+
+            // יצירת מקרר ריק ב-localStorage אם זו פעם ראשונה
+            if (!localStorage.getItem('pantry_' + email)) {
+                localStorage.setItem('pantry_' + email, JSON.stringify([]));
+            }
+            if (!localStorage.getItem('saved_recipes_' + email)) {
+                localStorage.setItem('saved_recipes_' + email, JSON.stringify([]));
+            }
+
+            window.location.href = 'index.html';
+        }
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

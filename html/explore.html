@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <title>אזור אישי - Smart Pantry</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/explore.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">🍳 Smart Pantry</div>
+        <nav>
+            <a href="index.html">דף הבית (המקרר שלי)</a>
+            <a href="explore.html" class="active">הסתכלות על מתכונים</a>
+            <a href="recipes.html">מתכונים שמורים</a>
+            <button onclick="handleLogout()" class="logout-nav-btn">התנתק</button>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <div class="card">
+            <h2>הסתכלות חופשית על מתכונים</h2>
+            <input type="text" id="explore-search" placeholder="חפש מתכון כללי (למשל: Pasta, Chicken)..." oninput="exploreRecipes()">
+            
+            <div id="explore-results" class="recipes-grid" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        window.onload = function() { checkAuth(); exploreRecipes(); }
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/explore.js"></script>
+</body>
+</html>
